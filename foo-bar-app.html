@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mini Test A – Foo/Bar/FooBar</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+    h1 { font-size: 18px; margin-bottom: 10px; }
+    .out { border: 1px solid #ddd; padding: 12px; border-radius: 8px;
+           white-space: normal; line-height: 1.6; word-wrap: break-word; }
+    .note { color:#555; font-size:12px; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <h1>Mini Test A – Output</h1>
+  <div id="output" class="out"></div>
+  <div class="note">Rules: skip primes; 3→Foo, 5→Bar, 3&amp;5→FooBar; printed horizontally.</div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      function isPrime(n) {
+        if (n < 2) return false;
+        if (n === 2 || n === 3) return true;
+        if (n % 2 === 0 || n % 3 === 0) return false;
+        for (let i = 5; i * i <= n; i += 6) {
+          if (n % i === 0 || n % (i + 2) === 0) return false;
+        }
+        return true;
+      }
+
+      const values = [];
+      for (let n = 100; n >= 1; n--) {
+        if (isPrime(n)) continue;
+        let s = "";
+        if (n % 3 === 0) s += "Foo";
+        if (n % 5 === 0) s += "Bar";
+        values.push(s || String(n));
+      }
+
+      const out = document.getElementById("output");
+      if (out) out.textContent = values.join(", ");
+    });
+  </script>
+</body>
+</html>
