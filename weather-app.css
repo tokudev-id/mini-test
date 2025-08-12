@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0;
+  padding: 25px;
+  min-height: 100vh;
+  background: #fefefe;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0 0 30px 0;
+  color: #34495e;
+  font-weight: normal;
+  text-align: left;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 15px;
+}
+
+.input-group {
+  margin-bottom: 35px;
+}
+
+label {
+  display: block;
+  font-weight: normal;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdc3c7;
+  font-size: 16px;
+  background: #fff;
+  margin-bottom: 15px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #7f8c8d;
+}
+
+button {
+  padding: 12px 24px;
+  background: #34495e;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: #2c3e50;
+}
+
+.refresh-btn {
+  background: #7f8c8d;
+  display: none;
+  padding: 12px 24px;
+}
+
+.refresh-btn.visible {
+  display: inline-block;
+}
+
+.refresh-btn:hover {
+  background: #6c7b7d;
+}
+
+.info-text {
+  color: #7f8c8d;
+  font-size: 15px;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.forecast-section {
+  margin-top: 25px;
+}
+
+.forecast-title {
+  font-size: 24px;
+  margin: 0 0 25px 0;
+  color: #2c3e50;
+  font-weight: normal;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+.forecast-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.forecast-item {
+  background: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.forecast-item:hover {
+  background: #e9ecef;
+}
+
+.forecast-date {
+  font-weight: normal;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.forecast-temp {
+  color: #34495e;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  margin-top: 20px;
+  border: 1px solid #f1aeb5;
+}
+
+.loading {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  margin: 25px 0;
+}
+
+.last-updated {
+  color: #95a5a6;
+  font-size: 13px;
+  margin-top: 25px;
+  font-style: italic;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  input, button {
+    min-width: auto;
+  }
+}

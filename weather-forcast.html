@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Jakarta Weather Forecast</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="weather-app.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Jakarta Weather Forecast</h1>
+    
+    <div class="input-group">
+      <label for="apiKey">API Key:</label>
+      <input 
+        id="apiKey" 
+        type="text" 
+        placeholder="Enter your OpenWeatherMap API key" 
+        value="975fbdc0e0a737ed51e38e795d1a3f7a"
+      />
+      <button id="fetchBtn">Get Forecast</button>
+      <button id="refreshBtn" class="refresh-btn">Refresh</button>
+    </div>
+    
+    <div class="info-text">
+      Shows 5-day weather forecast for Jakarta with daily average temperatures
+    </div>
+    
+    <div class="forecast-section">
+      <h3 class="forecast-title">5-Day Forecast</h3>
+      <div id="loading" class="loading" style="display: none;">Loading weather data...</div>
+      <ul id="forecastList" class="forecast-list"></ul>
+      <div id="error" class="error" style="display: none;"></div>
+    </div>
+    
+    <div id="lastUpdated" class="last-updated"></div>
+  </div>
+
+  <script src="weather-app.js"></script>
+</body>
+</html>
